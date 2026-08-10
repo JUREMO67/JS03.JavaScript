@@ -1,0 +1,113 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Números</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+        }
+
+        .caixa {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .resultado {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin: 6px 0;
+            padding: 6px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .resultado .verdadeiro {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .resultado .falso {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .resultado .comparacao {
+            color: #f7971e;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="caixa">
+        <h1>⚖️ Comparador</h1>
+
+        <div class="resultado" id="comp1"></div>
+        <div class="resultado" id="comp2"></div>
+        <div class="resultado" id="comp3"></div>
+        <div class="resultado" id="comp4"></div>
+        <div class="resultado" id="comp5"></div>
+
+        <!-- Desafio extra -->
+        <div class="resultado" id="comp6"></div>
+    </div>
+
+    <script>
+        // Valores solicitados pelo desafio
+        let a = 15;
+        let b = 10;
+
+        // Comparações usando operadores de comparação
+        let igual = a == b;
+        let diferente = a != b;
+        let maior = a > b;
+        let maiorIgual = a >= b;
+        let menor = a < b;
+
+        // Desafio extra: diferente estrito
+        let diferenteEstrito = a !== b;
+
+        // Função para exibir o resultado formatado
+        function exibir(id, operador, resultado) {
+            let texto = operador + " → ";
+
+            if (resultado === true) {
+                texto += '✅ true';
+            } else {
+                texto += '❌ false';
+            }
+
+            document.getElementById(id).innerHTML = texto;
+        }
+
+        // Exibe os resultados
+        exibir("comp1", "a == b", igual);
+        exibir("comp2", "a != b", diferente);
+        exibir("comp3", "a > b", maior);
+        exibir("comp4", "a >= b", maiorIgual);
+        exibir("comp5", "a < b", menor);
+        exibir("comp6", "a !== b", diferenteEstrito);
+    </script>
+
+</body>
+</html>
+```
